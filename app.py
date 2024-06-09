@@ -1,11 +1,14 @@
 import logging
 import os
 from faker import Faker
+from dotenv import load_dotenv
+
+load_dotenv()
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(name)s %(levelname)s %(message)s')
 def main():
     logging.info('начинается выполнения ПО')
     fake = Faker()
-    name = fake.name
+    name = fake.name()
     address = fake.address()
     text = fake.text()
 
